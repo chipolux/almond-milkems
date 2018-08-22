@@ -1,41 +1,50 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://bg.png" type="Texture" id=1]
-[ext_resource path="res://player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://cow.tscn" type="PackedScene" id=3]
-[ext_resource path="res://fence.png" type="Texture" id=4]
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://bg.png" type="Texture" id=2]
+[ext_resource path="res://player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://cow.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fence.png" type="Texture" id=5]
+[ext_resource path="res://milk-bucket.png" type="Texture" id=6]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 508.413, 10 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 216.598 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 208.547 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 489.866, 10 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 42.1495, 40.6517 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 45.5401, 67.1642 )
 
-[node name="main" type="Node"]
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 187.952, 21.2326 )
+
+[node name="main" type="Node" index="0"]
+
+script = ExtResource( 1 )
 
 [node name="bg" type="TextureRect" parent="." index="0"]
 
@@ -51,7 +60,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 stretch_mode = 0
 __meta__ = {
 "_edit_lock_": true
@@ -59,29 +68,30 @@ __meta__ = {
 
 [node name="entities" type="YSort" parent="." index="1"]
 
+editor/display_folded = true
 sort_enabled = true
 
-[node name="player" parent="entities" index="0" instance=ExtResource( 2 )]
+[node name="player" parent="entities" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 413.639, 295.624 )
 
-[node name="cow1" parent="entities" index="1" instance=ExtResource( 3 )]
+[node name="cow1" parent="entities" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 140.92, 299.456 )
 
-[node name="cow2" parent="entities" index="2" instance=ExtResource( 3 )]
+[node name="cow2" parent="entities" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 896.996, 252.84 )
 
-[node name="cow3" parent="entities" index="3" instance=ExtResource( 3 )]
+[node name="cow3" parent="entities" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 283.083, 89.9569 )
 
-[node name="cow4" parent="entities" index="4" instance=ExtResource( 3 )]
+[node name="cow4" parent="entities" index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 600.441, 297.704 )
 
-[node name="cow5" parent="entities" index="5" instance=ExtResource( 3 )]
+[node name="cow5" parent="entities" index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 744.203, 74.4755 )
 
@@ -102,32 +112,32 @@ __meta__ = {
 [node name="fence" type="CollisionShape2D" parent="barriers" index="0"]
 
 position = Vector2( 512.636, 430.957 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="left_edge" type="CollisionShape2D" parent="barriers" index="1"]
 
 position = Vector2( -1.27122, 216.11 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="right_edge" type="CollisionShape2D" parent="barriers" index="2"]
 
 position = Vector2( 1025.89, 230.517 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="top_edge" type="CollisionShape2D" parent="barriers" index="3"]
 
 position = Vector2( 507.38, -2.1931 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="crates" type="CollisionShape2D" parent="barriers" index="4"]
 
 position = Vector2( 47.7, 40.0241 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="tree" type="CollisionShape2D" parent="barriers" index="5"]
 
 position = Vector2( 985.469, 70.4531 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="fence" type="TextureRect" parent="." index="3"]
 
@@ -143,10 +153,182 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 0
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="milk_delivery" type="Area2D" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 584.093, 396.197 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="body" type="CollisionShape2D" parent="milk_delivery" index="0"]
+
+shape = SubResource( 7 )
+
+[node name="milks" type="Node" parent="." index="5"]
+
+editor/display_folded = true
+
+[node name="milk1" type="TextureRect" parent="milks" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 388.0
+margin_top = 389.0
+margin_right = 452.0
+margin_bottom = 453.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+stretch_mode = 0
+
+[node name="milk2" type="TextureRect" parent="milks" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 435.0
+margin_top = 389.0
+margin_right = 499.0
+margin_bottom = 453.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+stretch_mode = 0
+
+[node name="milk3" type="TextureRect" parent="milks" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 482.0
+margin_top = 389.0
+margin_right = 546.0
+margin_bottom = 453.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+stretch_mode = 0
+
+[node name="milk4" type="TextureRect" parent="milks" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 529.0
+margin_top = 389.0
+margin_right = 593.0
+margin_bottom = 453.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+stretch_mode = 0
+
+[node name="milk5" type="TextureRect" parent="milks" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 576.0
+margin_top = 389.0
+margin_right = 640.0
+margin_bottom = 453.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+stretch_mode = 0
+
+[node name="milk6" type="TextureRect" parent="milks" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 623.0
+margin_top = 389.0
+margin_right = 687.0
+margin_bottom = 453.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+stretch_mode = 0
+
+[node name="milk7" type="TextureRect" parent="milks" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 670.0
+margin_top = 389.0
+margin_right = 734.0
+margin_bottom = 453.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+stretch_mode = 0
+
+[node name="milk8" type="TextureRect" parent="milks" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 716.0
+margin_top = 389.0
+margin_right = 780.0
+margin_bottom = 453.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+stretch_mode = 0
 
 

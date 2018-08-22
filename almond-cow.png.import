@@ -7,7 +7,10 @@ path="res://.import/almond-cow.png-902edf4fc5990301cb7620b8bf1294ab.stex"
 [deps]
 
 source_file="res://almond-cow.png"
+source_md5="b42aff68c3748aec5d0c8a156a87b72f"
+
 dest_files=[ "res://.import/almond-cow.png-902edf4fc5990301cb7620b8bf1294ab.stex" ]
+dest_md5="78a2953e482527127369ea58f116d229"
 
 [params]
 

@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
+signal place_milk
 const SPEED = 125
-var velocity = Vector2()
 onready var udder_detector = get_node("udder_detector")
+var velocity = Vector2()
 var has_milk = false
 var udder_in_reach = false
 
@@ -21,7 +22,7 @@ func _physics_process(delta):
 		velocity.x += 1
 	move_and_slide(velocity * SPEED)
 	udder_in_reach = _udder_check()
-	
+
 func _process(delta):
 	if velocity.x < 0:
 		get_node("sprite").scale = Vector2(-1, 1)
@@ -36,8 +37,11 @@ func _process(delta):
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		get_milk()
-		
+		if has_milk:
+			emit_signal("place_milk")
+		else:
+			get_milk()
+
 func _in_personal_space(body):
 	if body.is_in_group("cow"):
 		body.scare(global_position)
@@ -47,7 +51,7 @@ func _udder_check():
 		if area.is_in_group("udder"):
 			return true
 	return false
-	
+
 func get_milk():
 	if udder_in_reach and not has_milk:
 		has_milk = true
