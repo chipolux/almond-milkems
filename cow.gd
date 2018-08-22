@@ -44,11 +44,9 @@ func update_interest_point():
 	var y = rand_range(position.y - WANDER_DISTANCE, position.y + WANDER_DISTANCE)
 	interest_point = Vector2(x, y)
 	interest_speed = rand_range(10, 70)
-	print("updated interest point")
 	
 func scare(source_position):
 	interest_timer.stop()
 	var direction = (global_position - source_position).normalized()
 	interest_point = position + (direction * 400)
 	interest_speed = 250
-	print("scared to %s" % interest_point)
