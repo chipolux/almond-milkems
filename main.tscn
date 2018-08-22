@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://bg.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://cow.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fence.png" type="Texture" id=5]
 [ext_resource path="res://milk-bucket.png" type="Texture" id=6]
+[ext_resource path="res://strike-guy.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -175,11 +176,9 @@ audio_bus_name = "Master"
 
 shape = SubResource( 7 )
 
-[node name="milks" type="Node" parent="." index="5"]
+[node name="milks" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
-
-[node name="milk1" type="TextureRect" parent="milks" index="0"]
+[node name="milk0" type="TextureRect" parent="milks" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -198,7 +197,7 @@ size_flags_vertical = 1
 texture = ExtResource( 6 )
 stretch_mode = 0
 
-[node name="milk2" type="TextureRect" parent="milks" index="1"]
+[node name="milk1" type="TextureRect" parent="milks" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -217,7 +216,7 @@ size_flags_vertical = 1
 texture = ExtResource( 6 )
 stretch_mode = 0
 
-[node name="milk3" type="TextureRect" parent="milks" index="2"]
+[node name="milk2" type="TextureRect" parent="milks" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -236,7 +235,7 @@ size_flags_vertical = 1
 texture = ExtResource( 6 )
 stretch_mode = 0
 
-[node name="milk4" type="TextureRect" parent="milks" index="3"]
+[node name="milk3" type="TextureRect" parent="milks" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -255,7 +254,7 @@ size_flags_vertical = 1
 texture = ExtResource( 6 )
 stretch_mode = 0
 
-[node name="milk5" type="TextureRect" parent="milks" index="4"]
+[node name="milk4" type="TextureRect" parent="milks" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -274,7 +273,7 @@ size_flags_vertical = 1
 texture = ExtResource( 6 )
 stretch_mode = 0
 
-[node name="milk6" type="TextureRect" parent="milks" index="5"]
+[node name="milk5" type="TextureRect" parent="milks" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -293,7 +292,7 @@ size_flags_vertical = 1
 texture = ExtResource( 6 )
 stretch_mode = 0
 
-[node name="milk7" type="TextureRect" parent="milks" index="6"]
+[node name="milk6" type="TextureRect" parent="milks" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -312,7 +311,7 @@ size_flags_vertical = 1
 texture = ExtResource( 6 )
 stretch_mode = 0
 
-[node name="milk8" type="TextureRect" parent="milks" index="7"]
+[node name="milk7" type="TextureRect" parent="milks" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -330,5 +329,142 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 6 )
 stretch_mode = 0
+
+[node name="strikes" type="Node2D" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 10, 17 )
+
+[node name="strike0" type="TextureRect" parent="strikes" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 183.0
+margin_top = 472.0
+margin_right = 247.0
+margin_bottom = 536.0
+rect_rotation = 3.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="strike1" type="TextureRect" parent="strikes" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 239.0
+margin_top = 474.0
+margin_right = 303.0
+margin_bottom = 538.0
+rect_rotation = -2.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="strike2" type="TextureRect" parent="strikes" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 299.0
+margin_top = 472.0
+margin_right = 363.0
+margin_bottom = 536.0
+rect_rotation = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="strikes_label" type="Label" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 47.0
+margin_top = 511.0
+margin_right = 138.0
+margin_bottom = 525.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "BAD REVIEWS:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="score_label" type="Label" parent="." index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 47.0
+margin_top = 560.0
+margin_right = 174.0
+margin_bottom = 574.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "HAPPY CUSTOMERS:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="score" type="Label" parent="." index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 244.0
+margin_top = 560.0
+margin_right = 315.0
+margin_bottom = 574.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
 
 
