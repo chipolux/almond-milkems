@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://cow.gd" type="Script" id=1]
 [ext_resource path="res://almond-cow.png" type="Texture" id=2]
@@ -8,6 +8,11 @@
 custom_solver_bias = 0.0
 radius = 28.6916
 height = 52.6242
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 14.2624, 10 )
 
 [node name="cow" type="KinematicBody2D" index="0" groups=[
 "cow",
@@ -39,5 +44,23 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="udders" type="Area2D" parent="." index="3" groups=[
+"udder",
+]]
+
+editor/display_folded = true
+position = Vector2( -7.91846, 19.8804 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="body" type="CollisionShape2D" parent="udders" index="0"]
+
+shape = SubResource( 2 )
 
 

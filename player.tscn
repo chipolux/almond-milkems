@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://player.png" type="Texture" id=2]
@@ -13,6 +13,11 @@ height = 5.8426
 
 custom_solver_bias = 0.0
 radius = 30.0165
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 17.5906, 10 )
 
 [node name="player" type="KinematicBody2D" groups=[
 "player",
@@ -48,5 +53,21 @@ audio_bus_name = "Master"
 
 position = Vector2( 0, 3 )
 shape = SubResource( 2 )
+
+[node name="udder_detector" type="Area2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( -2.03665, -32.9568 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="body" type="CollisionShape2D" parent="udder_detector" index="0"]
+
+shape = SubResource( 3 )
 
 
