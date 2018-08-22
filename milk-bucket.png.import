@@ -7,10 +7,7 @@ path="res://.import/milk-bucket.png-376f03a113d44c722066be80c651e666.stex"
 [deps]
 
 source_file="res://milk-bucket.png"
-source_md5="f8a53c1453881989eb701aface87a1a3"
-
 dest_files=[ "res://.import/milk-bucket.png-376f03a113d44c722066be80c651e666.stex" ]
-dest_md5="c87de33324f4fe94050ee0e59e73aef9"
 
 [params]
 
