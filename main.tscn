@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://bg.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://fence.png" type="Texture" id=5]
 [ext_resource path="res://milk-bucket.png" type="Texture" id=6]
 [ext_resource path="res://strike-guy.png" type="Texture" id=7]
+[ext_resource path="res://customer.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -71,6 +72,9 @@ __meta__ = {
 
 editor/display_folded = true
 sort_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="player" parent="entities" index="0" instance=ExtResource( 3 )]
 
@@ -171,12 +175,20 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="body" type="CollisionShape2D" parent="milk_delivery" index="0"]
 
 shape = SubResource( 7 )
 
 [node name="milks" type="Node2D" parent="." index="5"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="milk0" type="TextureRect" parent="milks" index="0"]
 
@@ -334,6 +346,9 @@ stretch_mode = 0
 
 editor/display_folded = true
 position = Vector2( 10, 17 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="strike0" type="TextureRect" parent="strikes" index="0"]
 
@@ -398,7 +413,45 @@ texture = ExtResource( 7 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="strikes_label" type="Label" parent="." index="7"]
+[node name="customers" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 381.591, 624.48 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="customer0" parent="customers" index="0" instance=ExtResource( 8 )]
+
+position = Vector2( 34, 22 )
+out_position = Vector2( 34, 22 )
+
+[node name="customer1" parent="customers" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 104, 19 )
+in_position = Vector2( 112, -123 )
+out_position = Vector2( 104, 19 )
+
+[node name="customer2" parent="customers" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 179, 20 )
+in_position = Vector2( 183, -114 )
+out_position = Vector2( 179, 20 )
+
+[node name="customer3" parent="customers" index="3" instance=ExtResource( 8 )]
+
+position = Vector2( 246, 20 )
+in_position = Vector2( 257, -121 )
+out_position = Vector2( 246, 20 )
+
+[node name="customer4" parent="customers" index="4" instance=ExtResource( 8 )]
+
+position = Vector2( 319, 21 )
+in_position = Vector2( 335, -115 )
+out_position = Vector2( 319, 21 )
+
+[node name="strikes_label" type="Label" parent="." index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -420,8 +473,11 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="score_label" type="Label" parent="." index="8"]
+[node name="score_label" type="Label" parent="." index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -443,8 +499,11 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="score" type="Label" parent="." index="9"]
+[node name="score" type="Label" parent="." index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -466,5 +525,8 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 

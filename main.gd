@@ -8,10 +8,12 @@ var strike_count = 0
 var score = 0
 var max_milks
 var max_strikes
+var all_customers
 
 func _ready():
 	max_milks = get_node("milks").get_child_count()
 	max_strikes = get_node("strikes").get_child_count()
+	all_customers = get_node("customers").get_children()
 	player.connect("place_milk", self, "place_milk")
 
 func _process(delta):
