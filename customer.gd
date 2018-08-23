@@ -51,6 +51,7 @@ func _anim_finished(name):
 func give_milk():
 	if can_accept_milk:
 		frame = 3
+		emit_signal("score")
 		player.queue("walk_out")
 
 func tick():
@@ -70,5 +71,4 @@ func tick():
 		cooldown -= 1
 		if cooldown <= 0:
 			frame = 0
-			emit_signal("score")
 			player.queue("walk_in")

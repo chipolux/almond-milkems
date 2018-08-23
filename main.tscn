@@ -434,50 +434,30 @@ __meta__ = {
 position = Vector2( 44, -122 )
 in_position = Vector2( 44, -122 )
 out_position = Vector2( 36, 23 )
-min_patience = 5
-max_patience = 15
-min_cooldown = 5
-max_cooldown = 15
 
 [node name="customer1" parent="customers" index="1" instance=ExtResource( 8 )]
 
 position = Vector2( 116, -120 )
 in_position = Vector2( 116, -120 )
 out_position = Vector2( 112, 20 )
-min_patience = 5
-max_patience = 15
-min_cooldown = 5
-max_cooldown = 15
 
 [node name="customer2" parent="customers" index="2" instance=ExtResource( 8 )]
 
 position = Vector2( 191, -120.265 )
 in_position = Vector2( 191, -120 )
 out_position = Vector2( 191, 21 )
-min_patience = 5
-max_patience = 15
-min_cooldown = 5
-max_cooldown = 15
 
 [node name="customer3" parent="customers" index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 265, -115 )
 in_position = Vector2( 265, -115 )
 out_position = Vector2( 268, 24 )
-min_patience = 5
-max_patience = 15
-min_cooldown = 5
-max_cooldown = 15
 
 [node name="customer4" parent="customers" index="4" instance=ExtResource( 8 )]
 
 position = Vector2( 340, -119 )
 in_position = Vector2( 340, -119 )
 out_position = Vector2( 340, 24 )
-min_patience = 5
-max_patience = 15
-min_cooldown = 5
-max_cooldown = 15
 
 [node name="strikes_label" type="Label" parent="." index="9"]
 

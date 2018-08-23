@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 signal place_milk
-const SPEED = 125
+const SPEED = 180
 onready var udder_detector = get_node("udder_detector")
 var velocity = Vector2()
 var has_milk = false
