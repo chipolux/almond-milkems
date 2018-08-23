@@ -7,10 +7,7 @@ path="res://.import/fence.png-459e2451c79a09a5b23fb58cc9a7be21.stex"
 [deps]
 
 source_file="res://fence.png"
-source_md5="50ca03080a07ec4e61029bc3f86bf3a6"
-
 dest_files=[ "res://.import/fence.png-459e2451c79a09a5b23fb58cc9a7be21.stex" ]
-dest_md5="23524a6db92df2a81840000cd013a53f"
 
 [params]
 
