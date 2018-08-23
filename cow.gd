@@ -32,19 +32,19 @@ func _physics_process(delta):
 		if not collision.collider.is_in_group("cow") and interest_timer.is_stopped():
 			interest_timer.set_wait_time(rand_range(1.5, 4.5))
 			interest_timer.start()
-		
+
 func _process(delta):
 	if velocity.x < 0:
 		get_node("sprite").scale = Vector2(-0.9, 0.9)
 	elif velocity.x > 0:
 		get_node("sprite").scale = Vector2(0.9, 0.9)
-	
+
 func update_interest_point():
 	var x = rand_range(position.x - WANDER_DISTANCE, position.x + WANDER_DISTANCE)
 	var y = rand_range(position.y - WANDER_DISTANCE, position.y + WANDER_DISTANCE)
 	interest_point = Vector2(x, y)
 	interest_speed = rand_range(10, 70)
-	
+
 func scare(source_position):
 	interest_timer.stop()
 	var direction = (global_position - source_position).normalized()

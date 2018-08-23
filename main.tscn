@@ -48,7 +48,14 @@ extents = Vector2( 187.952, 21.2326 )
 
 script = ExtResource( 1 )
 
-[node name="bg" type="TextureRect" parent="." index="0"]
+[node name="timer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[node name="bg" type="TextureRect" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -68,7 +75,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="entities" type="YSort" parent="." index="1"]
+[node name="entities" type="YSort" parent="." index="2"]
 
 editor/display_folded = true
 sort_enabled = true
@@ -100,7 +107,7 @@ position = Vector2( 600.441, 297.704 )
 
 position = Vector2( 744.203, 74.4755 )
 
-[node name="barriers" type="StaticBody2D" parent="." index="2"]
+[node name="barriers" type="StaticBody2D" parent="." index="3"]
 
 editor/display_folded = true
 input_pickable = false
@@ -144,7 +151,7 @@ shape = SubResource( 5 )
 position = Vector2( 985.469, 70.4531 )
 shape = SubResource( 6 )
 
-[node name="fence" type="TextureRect" parent="." index="3"]
+[node name="fence" type="TextureRect" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -164,7 +171,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="milk_delivery" type="Area2D" parent="." index="4"]
+[node name="milk_delivery" type="Area2D" parent="." index="5"]
 
 editor/display_folded = true
 position = Vector2( 584.093, 396.197 )
@@ -183,7 +190,7 @@ __meta__ = {
 
 shape = SubResource( 7 )
 
-[node name="milks" type="Node2D" parent="." index="5"]
+[node name="milks" type="Node2D" parent="." index="6"]
 
 editor/display_folded = true
 __meta__ = {
@@ -342,7 +349,7 @@ size_flags_vertical = 1
 texture = ExtResource( 6 )
 stretch_mode = 0
 
-[node name="strikes" type="Node2D" parent="." index="6"]
+[node name="strikes" type="Node2D" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( 10, 17 )
@@ -413,7 +420,7 @@ texture = ExtResource( 7 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="customers" type="Node2D" parent="." index="7"]
+[node name="customers" type="Node2D" parent="." index="8"]
 
 editor/display_folded = true
 position = Vector2( 381.591, 624.48 )
@@ -424,34 +431,55 @@ __meta__ = {
 
 [node name="customer0" parent="customers" index="0" instance=ExtResource( 8 )]
 
-position = Vector2( 34, 22 )
-out_position = Vector2( 34, 22 )
+position = Vector2( 44, -122 )
+in_position = Vector2( 44, -122 )
+out_position = Vector2( 36, 23 )
+min_patience = 5
+max_patience = 15
+min_cooldown = 5
+max_cooldown = 15
 
 [node name="customer1" parent="customers" index="1" instance=ExtResource( 8 )]
 
-position = Vector2( 104, 19 )
-in_position = Vector2( 112, -123 )
-out_position = Vector2( 104, 19 )
+position = Vector2( 116, -120 )
+in_position = Vector2( 116, -120 )
+out_position = Vector2( 112, 20 )
+min_patience = 5
+max_patience = 15
+min_cooldown = 5
+max_cooldown = 15
 
 [node name="customer2" parent="customers" index="2" instance=ExtResource( 8 )]
 
-position = Vector2( 179, 20 )
-in_position = Vector2( 183, -114 )
-out_position = Vector2( 179, 20 )
+position = Vector2( 191, -120.265 )
+in_position = Vector2( 191, -120 )
+out_position = Vector2( 191, 21 )
+min_patience = 5
+max_patience = 15
+min_cooldown = 5
+max_cooldown = 15
 
 [node name="customer3" parent="customers" index="3" instance=ExtResource( 8 )]
 
-position = Vector2( 246, 20 )
-in_position = Vector2( 257, -121 )
-out_position = Vector2( 246, 20 )
+position = Vector2( 265, -115 )
+in_position = Vector2( 265, -115 )
+out_position = Vector2( 268, 24 )
+min_patience = 5
+max_patience = 15
+min_cooldown = 5
+max_cooldown = 15
 
 [node name="customer4" parent="customers" index="4" instance=ExtResource( 8 )]
 
-position = Vector2( 319, 21 )
-in_position = Vector2( 335, -115 )
-out_position = Vector2( 319, 21 )
+position = Vector2( 340, -119 )
+in_position = Vector2( 340, -119 )
+out_position = Vector2( 340, 24 )
+min_patience = 5
+max_patience = 15
+min_cooldown = 5
+max_cooldown = 15
 
-[node name="strikes_label" type="Label" parent="." index="8"]
+[node name="strikes_label" type="Label" parent="." index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -477,7 +505,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="score_label" type="Label" parent="." index="9"]
+[node name="score_label" type="Label" parent="." index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -503,7 +531,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="score" type="Label" parent="." index="10"]
+[node name="score" type="Label" parent="." index="11"]
 
 anchor_left = 0.0
 anchor_top = 0.0
